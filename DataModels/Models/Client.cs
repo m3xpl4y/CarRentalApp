@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace DataModels.Models;
+﻿namespace DataModels.Models;
 
 public class Client
 {
@@ -11,9 +9,9 @@ public class Client
     public string LastName { get; set; } = string.Empty;
     public DateTime Birthsday { get; set; }
     [Phone]
-    public string Phone { get; set; }
+    public string Phone { get; set; } = string.Empty;
     [EmailAddress]
-    public string Email { get; set; }
+    public string Email { get; set; } = string.Empty;
     public ClientDriverLicense ClientDriverLicense { get; set; }
     public ClientPassport? ClientPassport { get; set; }
     public ClientPersonalId? ClientPersonalId { get; set; }
