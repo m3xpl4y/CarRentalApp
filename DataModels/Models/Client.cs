@@ -3,6 +3,9 @@
 public class Client
 {
     public int Id { get; set; }
+    [MaxLength(5, ErrorMessage = "Maximal Länge überschritten")]
+    [Display(Name = "Anrede")]
+    public string Salutation { get; set; } = string.Empty;
     [MaxLength(40, ErrorMessage ="Maximal Länge überschritten")]
     [Display(Name = "Vorname")]
     public string FirstName { get; set; } = string.Empty;
