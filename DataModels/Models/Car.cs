@@ -23,6 +23,6 @@ public class Car
     public Fuel Fuel { get; set; }
     public Body BodyType{ get; set; }
     public Gear Gear { get; set; }
+    public CarService CarService { get; set; }
     public Client Client { get; set; }
-
 }
