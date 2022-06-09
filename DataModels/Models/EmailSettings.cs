@@ -16,6 +16,8 @@ public class EmailSettings
     [MaxLength(4, ErrorMessage = "Maximal Länge überschritten")]
     [Display(Name = "Port")]
     public int Port { get; set; }
+    [Display(Name = "SSL")]
+    public bool SSL { get; set; }
     [MaxLength(150, ErrorMessage = "Maximal Länge überschritten")]
     [Display(Name = "Betreff")]
     public string Subject { get; set; } = string.Empty;

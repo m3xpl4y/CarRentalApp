@@ -17,6 +17,7 @@ public class Car
     public string Color { get; set; } = string.Empty;
     [Display(Name = "Farbe")]
     public double PowerInKiloWatts { get; set; }
+    [Display(Name = "Erstzulassung")]
     public DateTime FirstRegistration  { get; set; }
     public OptionalEquipment OptionalEquipment { get; set; }
     public Fuel Fuel { get; set; }
