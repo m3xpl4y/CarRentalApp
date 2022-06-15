@@ -1,11 +1,5 @@
 ﻿using MainCarRentApp.DbContexts;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace MainCarRentApp
@@ -16,6 +10,7 @@ namespace MainCarRentApp
     public partial class App : Application
     {
         private const string CONNECTION_STRING = "Data Source = CarRentSystemDB.db";
+        //private const string CONNECTION_STRING = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CarRentSystemDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         protected override void OnStartup(StartupEventArgs e)
         {
             DbContextOptions options = new DbContextOptionsBuilder().UseSqlite(CONNECTION_STRING).Options;

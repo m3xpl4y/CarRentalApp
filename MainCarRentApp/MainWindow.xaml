@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <StackPanel>
+            <TextBlock x:Name="lbl_Id"></TextBlock>
+            <TextBlock x:Name="lbl_Name"></TextBlock>
+            <TextBlock x:Name="lbl_counter"></TextBlock>
+            <TextBlock x:Name="lbl_Address"></TextBlock>
+            <TextBlock x:Name="lbl_passport"></TextBlock>
+        </StackPanel>
 
     </Grid>
 </Window>
