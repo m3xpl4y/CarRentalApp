@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CarRental.Main.Data;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Windows;
 
 namespace CarRental.Main
@@ -13,5 +9,11 @@ namespace CarRental.Main
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            DatabaseFacade facade = new(new ApplicationDbContext());
+            facade.EnsureCreated();
+            base.OnStartup(e);
+        }
     }
 }
