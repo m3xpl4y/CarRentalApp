@@ -5,9 +5,10 @@ using System.Configuration;
 namespace CarRental.Main.Data;
 public class ApplicationDbContext : DbContext
 {
+    string CONNECTION_STRING = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite(ConfigurationManager.AppSettings.Get("ConnectionString"));
+        optionsBuilder.UseSqlite(CONNECTION_STRING);
     }
 
     public DbSet<Client> Clients { get; set; }

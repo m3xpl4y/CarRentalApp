@@ -1,5 +1,5 @@
 ﻿using CarRental.Main.Data;
-using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using System.Windows;
 
 namespace CarRental.Main
@@ -11,8 +11,9 @@ namespace CarRental.Main
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            DatabaseFacade facade = new(new ApplicationDbContext());
-            facade.EnsureCreated();
+            ApplicationDbContext context = new ApplicationDbContext();
+            context.Database.Migrate();
+            context.Database.EnsureCreated();
             base.OnStartup(e);
         }
     }
