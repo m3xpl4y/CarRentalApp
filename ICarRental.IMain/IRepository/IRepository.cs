@@ -7,6 +7,5 @@
         Task Create(T1 model);
         Task Update(T1 model);
         Task Delete(T1 model);
-
     }
 }
