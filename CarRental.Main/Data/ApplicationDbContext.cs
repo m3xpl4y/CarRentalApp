@@ -1,8 +1,4 @@
-﻿using DataModels.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Configuration;
-
-namespace CarRental.Main.Data;
+﻿namespace CarRental.Main.Data;
 public class ApplicationDbContext : DbContext
 {
     string CONNECTION_STRING = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();

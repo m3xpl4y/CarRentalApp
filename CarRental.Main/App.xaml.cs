@@ -1,8 +1,4 @@
-﻿using CarRental.Main.Data;
-using Microsoft.EntityFrameworkCore;
-using System.Windows;
-
-namespace CarRental.Main
+﻿namespace CarRental.Main
 {
     /// <summary>
     /// Interaction logic for App.xaml

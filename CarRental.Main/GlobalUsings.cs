@@ -1,0 +1,12 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using CarRental.Main.Data;
+global using DataModels.Models;
+global using ICarRental.IMain.IRepository;
+global using Microsoft.EntityFrameworkCore;
+global using CarRental.Main.Repositories;
+global using System.Windows;
+global using System.Configuration;
