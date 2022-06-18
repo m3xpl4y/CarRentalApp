@@ -1,7 +1,11 @@
 ﻿namespace CarRental.Main.Repositories;
-public class RentDayRepository : IRepository<RentDay, int>
+public class RentDayRepository : BaseRepository, IRepository<RentDay, int>
 {
-    private readonly ApplicationDbContext _context = new ApplicationDbContext();
+    private readonly ApplicationDbContext _context;
+    public RentDayRepository()
+    {
+        _context = base.Context;
+    }
     public async Task Create(RentDay model)
     {
         await _context.AddAsync(model);

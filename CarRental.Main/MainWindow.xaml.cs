@@ -19,7 +19,7 @@
                 DateOfExpiry = DateTime.Now,
                 DateOfIssue = DateTime.Now,
                 IssuingAuthority = "Feldkirch",
-                DriverLicensNr = "0000000"
+                DriverLicensNr = "111111111"
             };
 
             ClientPassport clientPassport = new ClientPassport()
@@ -27,14 +27,14 @@
                 DateOfExpiry = DateTime.Now,
                 DateOfIssue = DateTime.Now,
                 IssuingAuthority = "Romania",
-                PassportNr = "11111111"
+                PassportNr = "333333333"
             };
             ClientPersonalId clientPersonalId = new ClientPersonalId()
             {
                 DateOfExpiry = DateTime.Now,
                 DateOfIssue = DateTime.Now,
                 IssuingAuthority = "Romania",
-                PersonalIdNumber = "11111111"
+                PersonalIdNumber = "222222"
             };
             ClientAddress clientAddress = new ClientAddress()
             {
@@ -56,7 +56,7 @@
                 LastName = "Tamasanu",
                 BirthDate = DateTime.Now,
                 Phone = "069914464747",
-                Email = "m3xpl4y@gmail.com",
+                Email = "maex84@gmail.com",
                 ClientInformation = clientInformation,
                 ClientAddress = clientAddress,
                 ClientDriverLicense = license,

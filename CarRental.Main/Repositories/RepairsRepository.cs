@@ -1,21 +1,27 @@
 ﻿namespace CarRental.Main.Repositories;
 public class RepairsRepository : BaseRepository, IRepository<Repairs, int>
 {
+    private readonly ApplicationDbContext _context;
+
+    public RepairsRepository()
+    {
+        _context = base.Context;
+    }
     public async Task Create(Repairs model)
     {
-        await Context().AddAsync(model);
-        await Context().SaveChangesAsync();
+        await _context.AddAsync(model);
+        await _context.SaveChangesAsync();
     }
 
     public async Task Delete(Repairs model)
     {
-        Context().Remove(model);
-        await Context().SaveChangesAsync();
+        _context.Remove(model);
+        await _context.SaveChangesAsync();
     }
 
     public async Task<List<Repairs>> GetAll()
     {
-        var repairs = await Context().Repairs
+        var repairs = await _context.Repairs
             .Include(x => x.Car.OptionalEquipment)
             .Include(x => x.Car.Fuel)
             .Include(x => x.Car.BodyType)
@@ -33,7 +39,7 @@ public class RepairsRepository : BaseRepository, IRepository<Repairs, int>
 
     public async Task<Repairs> GetbyId(int id)
     {
-        var repair = await Context().Repairs
+        var repair = await _context.Repairs
             .Include(x => x.Car.OptionalEquipment)
             .Include(x => x.Car.Fuel)
             .Include(x => x.Car.BodyType)
@@ -51,7 +57,7 @@ public class RepairsRepository : BaseRepository, IRepository<Repairs, int>
 
     public async Task Update(Repairs model)
     {
-        Context().Update(model);
-        await Context().SaveChangesAsync();
+        _context.Update(model);
+        await _context.SaveChangesAsync();
     }
 }

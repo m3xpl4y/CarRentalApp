@@ -1,7 +1,11 @@
 ﻿namespace CarRental.Main.Repositories;
-public class ContractRepository : IRepository<Contract, int>
+public class ContractRepository : BaseRepository, IRepository<Contract, int>
 {
-    private readonly ApplicationDbContext _context = new ApplicationDbContext();
+    private readonly ApplicationDbContext _context;
+    public ContractRepository()
+    {
+        _context = base.Context;
+    }
     public async Task Create(Contract model)
     {
         await _context.AddAsync(model);
