@@ -1,5 +1,5 @@
 ﻿namespace CarRental.Main.Repositories;
-internal class ClientRepository : IRepository<Client, int>
+public class ClientRepository : IRepository<Client, int>
 {
     private readonly ApplicationDbContext _context = new ApplicationDbContext();
     public async Task Create(Client model)
