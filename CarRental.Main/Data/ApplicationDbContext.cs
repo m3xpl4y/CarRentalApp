@@ -1,10 +1,9 @@
 ﻿namespace CarRental.Main.Data;
 public class ApplicationDbContext : DbContext
 {
-    string CONNECTION_STRING = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite(CONNECTION_STRING);
+        optionsBuilder.UseSqlite(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString());
     }
 
     public DbSet<Client> Clients => Set<Client>();
