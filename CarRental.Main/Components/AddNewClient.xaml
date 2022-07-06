@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="CarRental.Main.Components.AddNewClient"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CarRental.Main.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1000">
+    <Grid>
+        <Grid Background="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content = "Name"  VerticalAlignment = "Center" HorizontalAlignment="Left" Width = "70" Grid.Row="0" Grid.Column="0"/>
+                <Label Content = "Straße"  VerticalAlignment = "Center" HorizontalAlignment="Left" Width = "70" Grid.Row="1" Grid.Column="0"/>
+                <Label Content = "Ort"  VerticalAlignment = "Center" HorizontalAlignment="Left" Width = "70" Grid.Row="2" Grid.Column="0"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox Name="txtName" Text="Maximilian" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"></TextBox>
+                <TextBox Name="txtName1" Text="Maximilian2" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"></TextBox>
+                <TextBox Name="txtName2" Text="Maximilian3" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"></TextBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
