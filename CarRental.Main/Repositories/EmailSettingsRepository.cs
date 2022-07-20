@@ -1,10 +1,10 @@
 ﻿namespace CarRental.Main.Repositories;
-public class EmailSettingsRepository : BaseRepository, IRepository<EmailSettings, int>
+public class EmailSettingsRepository : IRepository<EmailSettings, int>
 {
     private readonly ApplicationDbContext _context;
-    public EmailSettingsRepository()
+    public EmailSettingsRepository(ApplicationDbContext context)
     {
-        _context = Context;
+        _context = context;
     }
     public async Task Create(EmailSettings model)
     {

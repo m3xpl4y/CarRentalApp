@@ -1,10 +1,10 @@
 ﻿namespace CarRental.Main.Repositories;
-public class PromotionRepository : BaseRepository, IRepository<Promotions, int>
+public class PromotionRepository : IRepository<Promotions, int>
 {
     private readonly ApplicationDbContext _context;
-    public PromotionRepository()
+    public PromotionRepository(ApplicationDbContext context)
     {
-        _context = Context;
+        _context = context;
     }
     public async Task Create(Promotions model)
     {

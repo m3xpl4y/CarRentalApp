@@ -1,10 +1,10 @@
 ﻿namespace CarRental.Main.Repositories;
-public class CarRepository : BaseRepository, IRepository<Car, int>
+public class CarRepository : IRepository<Car, int>
 {
     private readonly ApplicationDbContext _context;
-    public CarRepository()
+    public CarRepository(ApplicationDbContext context)
     {
-        _context = base.Context;
+        _context = context;
     }
     public async Task Create(Car model)
     {
@@ -51,7 +51,7 @@ public class CarRepository : BaseRepository, IRepository<Car, int>
             .Include(x => x.Client.ClientPassport)
             .Include(x => x.Client.ClientPersonalId)
             .FirstOrDefaultAsync(x => x.Id == id);
-        return car;
+        return car!;
     }
 
     public async Task Update(Car model)

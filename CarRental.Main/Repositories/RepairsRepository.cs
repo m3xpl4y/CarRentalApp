@@ -1,11 +1,11 @@
 ﻿namespace CarRental.Main.Repositories;
-public class RepairsRepository : BaseRepository, IRepository<Repairs, int>
+public class RepairsRepository : IRepository<Repairs, int>
 {
     private readonly ApplicationDbContext _context;
 
-    public RepairsRepository()
+    public RepairsRepository(ApplicationDbContext context)
     {
-        _context = base.Context;
+        _context = context;
     }
     public async Task Create(Repairs model)
     {

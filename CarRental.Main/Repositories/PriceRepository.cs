@@ -1,10 +1,10 @@
 ﻿namespace CarRental.Main.Repositories;
-public class PriceRepository : BaseRepository, IRepository<Price, int>
+public class PriceRepository : IRepository<Price, int>
 {
     private readonly ApplicationDbContext _context;
-    public PriceRepository()
+    public PriceRepository(ApplicationDbContext context)
     {
-        _context = Context;
+        _context = context;
     }
 
     public async Task Create(Price model)

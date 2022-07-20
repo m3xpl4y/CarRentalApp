@@ -1,10 +1,10 @@
 ﻿namespace CarRental.Main.Repositories;
-public class DiscountRepository : BaseRepository, IRepository<Discount, int>
+public class DiscountRepository : IRepository<Discount, int>
 {
     private readonly ApplicationDbContext _context;
-    public DiscountRepository()
+    public DiscountRepository(ApplicationDbContext context)
     {
-        _context = Context;
+        _context = context;
     }
     public async Task Create(Discount model)
     {

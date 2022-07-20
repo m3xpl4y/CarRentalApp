@@ -1,10 +1,10 @@
 ﻿namespace CarRental.Main.Repositories;
-public class ClientRepository : BaseRepository, IRepository<Client, int>
+public class ClientRepository : IRepository<Client, int>
 {
     private readonly ApplicationDbContext _context;
-    public ClientRepository()
+    public ClientRepository(ApplicationDbContext context)
     {
-        _context = base.Context;
+        _context = context;
     }
     public async Task Create(Client model)
     {
@@ -14,7 +14,7 @@ public class ClientRepository : BaseRepository, IRepository<Client, int>
 
     public async Task Delete(Client model)
     {
-        Context.Remove(model);
+        _context.Remove(model);
         await _context.SaveChangesAsync();
     }
 
