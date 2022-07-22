@@ -22,4 +22,8 @@
     <ProjectReference Include="..\ICarRental.IMain\ICarRental.IMain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>

@@ -5,9 +5,6 @@ using Microsoft.Extensions.Hosting;
 
 namespace CarRental.Main
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
         public static IHost? AppHost { get; private set; }
@@ -19,20 +16,23 @@ namespace CarRental.Main
                     services.AddDbContext<ApplicationDbContext>(options =>
                             options.UseSqlite(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()));
 
-                    //RepositoryServices(services);
+                    #region WINDOW
                     services.AddSingleton<MainWindow>();
+                    #endregion
+
+                    #region REPOSITORIES
                     services.AddScoped<IRepository<Car, int>, CarRepository>();
                     services.AddScoped<IRepository<Client, int>, ClientRepository>();
+                    #endregion
+
+                    #region SERVICES
                     services.AddTransient<IService<Client>, TestService>();
+                    #endregion
 
                 }).Build();
         }
         protected override async void OnStartup(StartupEventArgs e)
         {
-            //ApplicationDbContext context = new ApplicationDbContext();
-            //context.Database.Migrate();
-            //context.Database.EnsureCreated();
-
             await AppHost!.StartAsync();
             var startUpWindow = AppHost.Services.GetRequiredService<MainWindow>();
             startUpWindow.Show();
@@ -42,11 +42,6 @@ namespace CarRental.Main
         {
             await AppHost!.StopAsync();
             base.OnExit(e);
-        }
-        private void RepositoryServices(IServiceCollection services)
-        {
-            services.AddScoped<IRepository<Car, int>, CarRepository>();
-            services.AddScoped<IRepository<Client, int>, ClientRepository>();
         }
     }
 }
