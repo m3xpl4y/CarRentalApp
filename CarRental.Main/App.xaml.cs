@@ -21,8 +21,9 @@ namespace CarRental.Main
                     #endregion
 
                     #region REPOSITORIES
-                    services.AddScoped<IRepository<Car, int>, CarRepository>();
-                    services.AddScoped<IRepository<Client, int>, ClientRepository>();
+                    RepositoryServices(services);
+                    //services.AddScoped<IRepository<Car, int>, CarRepository>();
+                    //services.AddScoped<IRepository<Client, int>, ClientRepository>();
                     #endregion
 
                     #region SERVICES
@@ -42,6 +43,11 @@ namespace CarRental.Main
         {
             await AppHost!.StopAsync();
             base.OnExit(e);
+        }
+        protected async void RepositoryServices(IServiceCollection services)
+        {
+            services.AddScoped<IRepository<Car, int>, CarRepository>();
+            services.AddScoped<IRepository<Client, int>, ClientRepository>();
         }
     }
 }
